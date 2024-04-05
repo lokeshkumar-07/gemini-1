@@ -9,32 +9,14 @@ import mongoose from "mongoose";
 import queryRoutes from "./routes/queryRoutes.js";
 import proVisionRoutes from "./routes/proVisionRoutes.js";
 
+
 const app = express()
 dotenv.config()
 
 //middleware
 app.use(express.json())
 app.use(cors())
-// const genAi = new GoogleGenerativeAI(process.env.API_KEY)
 
-// const userInterface = readline.createInterface({
-//     input: process.stdin,
-//     output: process.stdout
-// })
-
-
-// userInterface.prompt()
-
-// userInterface.on("line", async (input) => {
-//     const model = genAi.getGenerativeModel({ model: "gemini-pro"})
-
-//     const result = await model.generateContent(input)
-
-//     const response = await result.response
-//     const text = response.text()
-
-//     console.log(text)
-// })
 
 app.use('/api/gemini', geminiRoutes)
 app.use('/api/auth', authRoutes)
